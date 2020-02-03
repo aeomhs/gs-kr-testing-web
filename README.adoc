@@ -7,8 +7,7 @@
 :source-highlighter: prettify
 :project_id: gs-testing-web
 
-This guide walks you through the process of creating a Spring application and then testing
-it with JUnit.
+이번 가이드는 스프링 애플리케이션을 제작하고 JUnit을 사용하여 테스트를 진행합니다.
 
 == What You Will Build
 
