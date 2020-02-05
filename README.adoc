@@ -11,12 +11,10 @@
 
 == What You Will Build
 
-You will build a simple Spring application and test it with JUnit. You probably already
-know how to write and run unit tests of the individual classes in your application, so,
-for this guide, we will concentrate on using Spring Test and Spring Boot features to test
-the interactions between Spring and your code. You will start with a simple test that the
-application context loads successfully and continue on to test only the web layer by using
-Spring's `MockMvc`.
+간단한 스프링 부트 애플리케이션을 빌드하고 JUnit으로 테스트해볼 예정입니다. 이미 개인적으로 단위 테스트를 작성하고
+실행해보셨을거라 생각합니다. 그래서 이번 가이드에서는 스프링 테스트와 스프링 부트를 사용하여 스프링과 코드간의 상호작용을
+테스트하는 것에 집중하고자 합니다. 애플리케이션 컨텍스트가 성공적으로 로드되는지 간단하게 테스트해보는 것을 시작으로
+스프링의 `MockMvc`를 사용하여 웹 계층을 테스트하는 것까지 진행할 예정입니다.
 
 
 == What You Need
@@ -61,8 +59,8 @@ include::initial/build.gradle[]
 [[initial]]
 == Create a Simple Application
 
-Create a new controller for your Spring application. The following listing (from
-`src/main/java/com/example/testingweb/HomeController.java`) shows how to do so:
+아래와 같은 스프링 애플리케이션의 새로운 컨트롤러를 생성합니다.
+(from `src/main/java/com/example/testingweb/HomeController.java`)
 
 ====
 [source,java]
@@ -71,13 +69,13 @@ include::complete/src/main/java/com/example/testingweb/HomeController.java[]
 ----
 ====
 
-NOTE: The preceding example does not specify `GET` versus `PUT`, `POST`, and so forth.
-By default `@RequestMapping` maps all HTTP operations. You can use `@GetMapping` or
-`@RequestMapping(method=GET)` to narrow this mapping.
-
+NOTE: 위 예제는 `GET` 혹은 `PUT`, `POST`에 대해서 명세하지 않았습니다. 기본적으로 `@RequestMapping`은 모든
+HTTP 기능들을 담당(map)합니다. `@GetMapping` 혹은 `@RequestMapping(method=GET)`과 같이 작성하여
+범위를 지정할 수 있습니다.
 
 == Run the Application
 
+스프링 생성자(The Spring Initializr)는 `main()` 메서드를 갖는 애플리케이션 클래스를 생성합니다. 이번 가이드는 
 The Spring Initializr creates an application class (a class with a `main()` method) for
 you. For this guide, you need not modify this class. The following listing (from
 `src/main/java/com/example/testingweb/TestingWebApplication.java`) shows the application class that
